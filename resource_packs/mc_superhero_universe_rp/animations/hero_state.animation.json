@@ -1,0 +1,12 @@
+{
+  "format_version": "1.10.0",
+  "animations": {
+    "animation.msu.hero_state": {
+      "loop": true,
+      "animation_length": 1,
+      "bones": {
+        "body": { "rotation": [0, 0, 0] }
+      }
+    }
+  }
+}

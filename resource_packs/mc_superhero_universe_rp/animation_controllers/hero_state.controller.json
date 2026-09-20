@@ -1,0 +1,9 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.msu.hero_state": {
+      "initial_state": "default",
+      "states": { "default": { "animations": ["msu_hero_state"] } }
+    }
+  }
+}

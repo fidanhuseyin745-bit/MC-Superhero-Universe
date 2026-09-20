@@ -1,0 +1,7 @@
+{
+  "sound_definitions": {
+    "msu.ability.arc_burst": { "category": "player", "sounds": ["sounds/msu/arc_burst"] },
+    "msu.ability.guardian_pulse": { "category": "player", "sounds": ["sounds/msu/guardian_pulse"] },
+    "msu.ability.cinder_wave": { "category": "player", "sounds": ["sounds/msu/cinder_wave"] }
+  }
+}

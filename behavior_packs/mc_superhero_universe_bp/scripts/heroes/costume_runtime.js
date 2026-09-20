@@ -1,0 +1,4 @@
+import { world } from '@minecraft/server';
+import { getState } from '../core/player_state.js';
+import { getCostume } from '../../data/registry.js';
+export function applyCostumeTags(player) { const state = getState(player); for (const tag of player.getTags()) if (tag.startsWith('msu_costume_')) player.removeTag(tag); const costume = getCostume(state.costumeId); if (costume) player.addTag(costume.tag); }

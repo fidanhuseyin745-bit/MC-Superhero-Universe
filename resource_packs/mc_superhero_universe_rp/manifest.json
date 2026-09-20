@@ -1,0 +1,17 @@
+{
+  "format_version": 2,
+  "header": {
+    "name": "MC Superhero Universe - Resource Pack",
+    "description": "Original superhero visual and audio foundation",
+    "uuid": "b2fa2c10-7443-4e0c-9b3d-fb87c06b66a4",
+    "version": [0, 1, 0],
+    "min_engine_version": [1, 21, 0]
+  },
+  "modules": [
+    {
+      "type": "resources",
+      "uuid": "a6cd42b4-fdc1-4615-83f0-d4d9f6880b25",
+      "version": [0, 1, 0]
+    }
+  ]
+}

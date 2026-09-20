@@ -1,0 +1,14 @@
+{
+  "format_version": "1.21.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "minecraft:player",
+      "materials": { "default": "armor" },
+      "textures": { "default": "textures/entity/player" },
+      "geometry": { "default": "geometry.humanoid" },
+      "scripts": { "animate": ["msu_hero_state"] },
+      "animations": { "msu_hero_state": "animation.msu.hero_state" },
+      "render_controllers": ["controller.render.msu.hero_state"]
+    }
+  }
+}
