@@ -1,4 +1,4 @@
-# Validation script for the registry and pack metadata.
+// Validation script for the registry and pack metadata.
 const fs = require('fs');
 const path = require('path');
 
