@@ -1,47 +1,10 @@
 {
-  "format_version": "1.21.0",
-  "minecraft:client_entity": {
-    "description": {
-      "identifier": "msu:hero_base",
-      "materials": {
-        "default": "entity_alphatest",
-        "hero": "entity_alphatest"
-      },
-      "textures": {
-        "default": "textures/entity/hero_base"
-      },
-      "geometry": {
-        "default": "geometry.msu.hero_base"
-      },
-      "scripts": {
-        "animate": [
-          "idle",
-          "run",
-          "jump",
-          "fall",
-          "power",
-          "special",
-          "ultimate",
-          "victory"
-        ]
-      },
-      "animations": {
-        "idle": "animation.msu.hero_idle",
-        "run": "animation.msu.hero_run",
-        "jump": "animation.msu.hero_jump",
-        "fall": "animation.msu.hero_fall",
-        "power": "animation.msu.hero_power",
-        "special": "animation.msu.hero_special",
-        "ultimate": "animation.msu.hero_ultimate",
-        "victory": "animation.msu.hero_victory"
-      },
-      "render_controllers": [
-        "controller.render.msu.hero_base"
-      ],
-      "spawn_egg": {
-        "base_color": "#5a7cff",
-        "overlay_color": "#ffd54c"
-      }
+  "format_version": "1.10.0",
+  "render_controllers": {
+    "controller.render.msu.hero_base": {
+      "geometry": "Geometry.default",
+      "materials": [{ "*": "Material.default" }],
+      "textures": ["Texture.default"]
     }
   }
 }

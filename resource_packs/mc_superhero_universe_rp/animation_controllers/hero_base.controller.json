@@ -1,14 +1,41 @@
 {
   "format_version": "1.10.0",
-  "animations": {
-    "animation.msu.hero_victory": {
-      "loop": false,
-      "animation_length": 1.2,
-      "bones": {
-        "head": { "rotation": [0, 0, 0] },
-        "arm_left": { "rotation": [0, 0, -20] },
-        "arm_right": { "rotation": [0, 0, 20] },
-        "cape": { "rotation": [0, 40, 0] }
+  "animation_controllers": {
+    "controller.animation.msu.hero_base": {
+      "initial_state": "idle",
+      "states": {
+        "idle": {
+          "animations": ["idle"],
+          "transitions": [
+            { "run": "query.is_moving" },
+            { "jump": "query.is_jumping" },
+            { "fall": "query.is_falling" },
+            { "power": "query.is_using_item" }
+          ]
+        },
+        "run": {
+          "animations": ["run"],
+          "transitions": [
+            { "idle": "!query.is_moving" },
+            { "jump": "query.is_jumping" },
+            { "fall": "query.is_falling" }
+          ]
+        },
+        "jump": {
+          "animations": ["jump"],
+          "transitions": [
+            { "fall": "query.is_falling" },
+            { "idle": "!query.is_jumping && !query.is_falling" }
+          ]
+        },
+        "fall": {
+          "animations": ["fall"],
+          "transitions": [{ "idle": "!query.is_falling" }]
+        },
+        "power": {
+          "animations": ["power"],
+          "transitions": [{ "idle": "!query.is_using_item" }]
+        }
       }
     }
   }

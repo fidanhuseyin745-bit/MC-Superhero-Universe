@@ -1,11 +1,14 @@
-import { getState } from '../core/player_state.js';
-import { getCostume } from '../../data/registry.js';
-
-export function applyCostumeTags(player) {
-  const state = getState(player);
-  for (const tag of player.getTags()) {
-    if (tag.startsWith('msu_costume_')) player.removeTag(tag);
+{
+  "format_version": "1.21.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "msu:hero_base",
+      "materials": { "default": "entity_alphatest" },
+      "textures": { "default": "textures/entity/hero_base" },
+      "geometry": { "default": "geometry.msu.hero_base" },
+      "scripts": { "animate": ["hero_controller"] },
+      "animations": { "hero_controller": "controller.animation.msu.hero_base" },
+      "render_controllers": ["controller.render.msu.hero_base"]
+    }
   }
-  const costume = getCostume(state.costumeId);
-  if (costume) player.addTag(costume.tag);
 }
