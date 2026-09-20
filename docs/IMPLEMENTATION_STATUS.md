@@ -1,7 +1,9 @@
-# Final build status
+# Final expansion status
 
-The registry now defines 50 data-driven original hero archetypes, 150 registry costume variants, and 150 registry abilities. Registry records intentionally mark costumes as `registry-only` with null model/texture assets when no verified binary asset exists; this prevents fake asset references.
+The current registry contains 61 original hero archetypes, 183 registry costume variants, and 183 registry abilities. The 20 new heroes have distinct concepts, archetypes, three named costume variants, and three named abilities each.
 
-The repository still contains one original shared Bedrock geometry scaffold and no binary textures or audio. Registry counts must not be confused with real model/texture asset counts.
+Registry-only entries are explicit: every costume has `assetStatus: registry-only`, `modelAsset: null`, and `textureAsset: null` because no verified binary costume assets are bundled. Registry counts must not be presented as real model or texture counts.
 
-Runtime and Bedrock validation must be run from the repository root. Minecraft runtime testing is not performed in this repository automation environment.
+Existing shared Bedrock geometry, animation, controller, particle, and vanilla sound scaffolding remains unchanged. No external binary asset was added.
+
+Runtime validation must be run from the repository root. Minecraft Bedrock runtime testing is not available in this automation environment.

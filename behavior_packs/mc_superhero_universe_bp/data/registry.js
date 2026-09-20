@@ -39,48 +39,48 @@ const BASE_HEROES = [
   ['skyharbor', 'Skyharbor', 'flight', 108, ['cloudpiercer', 'windward', 'highport']],
   ['dusk_relay', 'Dusk Relay', 'mobility', 94, ['afterglow', 'twilight', 'relay']],
   ['voltage_vault', 'Voltage Vault', 'electric', 100, ['cell', 'overload', 'gridguard']],
-  ['marrow_guard', 'Marrow Guard', 'defense', 112, ['boneplate', 'whitewall', 'keystone']]
+  ['marrow_guard', 'Marrow Guard', 'defense', 112, ['boneplate', 'whitewall', 'keystone']],
+  ['circuit_sage', 'Circuit Sage', 'tech', 102, ['logic_beam', 'drone_screen', 'quantum_patch']],
+  ['storm_riven', 'Storm Riven', 'electric', 104, ['arc_javelin', 'chain_flash', 'sky_circuit']],
+  ['ember_mantis', 'Ember Mantis', 'fire', 94, ['scorch_claw', 'flare_leap', 'inferno_pounce']],
+  ['glacier_skein', 'Glacier Skein', 'ice', 103, ['frost_thread', 'ice_lattice', 'whiteout']],
+  ['titan_loom', 'Titan Loom', 'power', 124, ['atlas_grip', 'breaker_step', 'colossus_drop']],
+  ['star_cartographer', 'Star Cartographer', 'cosmic', 118, ['orbit_mark', 'meteor_route', 'celestial_map']],
+  ['rune_bastion', 'Rune Bastion', 'arcane', 108, ['ward_glyph', 'rune_lance', 'seal_break']],
+  ['gravity_lark', 'Gravity Lark', 'gravity', 101, ['featherwell', 'mass_shift', 'falling_star']],
+  ['reef_oracle', 'Reef Oracle', 'water', 99, ['current_sight', 'reef_spike', 'tide_prophecy']],
+  ['verdant_warden', 'Verdant Warden', 'nature', 107, ['vine_bind', 'bloom_guard', 'forest_call']],
+  ['shade_lantern', 'Shade Lantern', 'stealth', 91, ['dark_lure', 'silent_step', 'blackout']],
+  ['kinetic_harrow', 'Kinetic Harrow', 'plasma', 106, ['impact_store', 'vector_cut', 'kinetic_release']],
+  ['aether_pilot', 'Aether Pilot', 'flight', 109, ['lift_vector', 'cloud_lance', 'skybreak']],
+  ['pulse_nomad', 'Pulse Nomad', 'speed', 97, ['pulse_dash', 'tempo_strike', 'time_skip']],
+  ['bastion_ore', 'Bastion Ore', 'defense', 116, ['ore_shield', 'fortify', 'citadel_crash']],
+  ['prism_weaver', 'Prism Weaver', 'light', 101, ['prism_thread', 'spectrum_arc', 'rainbow_cascade']],
+  ['void_chorus', 'Void Chorus', 'void', 111, ['null_note', 'rift_hum', 'silence_field']],
+  ['sunken_crown', 'Sunken Crown', 'water', 113, ['pressure_wave', 'trench_guard', 'leviathan_call']],
+  ['magnet_veil', 'Magnet Veil', 'magnetic', 105, ['iron_shroud', 'polarity_flip', 'railstorm']]
 ];
 
 const HEROES = {};
 const COSTUMES = {};
 const ABILITIES = {};
-
-const abilityNames = ['primary_strike', 'special_burst', 'ultimate_drive'];
+const defaultAbilityNames = ['primary_strike', 'special_burst', 'ultimate_drive'];
 const handlerByArchetype = {
   tech: 'repulsor_burst', mobility: 'speed_burst', power: 'smash_wave', elemental: 'lightning_strike', speed: 'speed_burst', flight: 'flight_burst', stealth: 'shadow_step', defense: 'guard_slam', radiant: 'nova_ray', fire: 'cinder_wave', ice: 'frost_burst', earth: 'ground_punch', water: 'tide_wave', nature: 'thorn_wave', sound: 'sonic_burst', light: 'nova_ray', void: 'shadow_step', gravity: 'gravity_well', plasma: 'repulsor_burst', psionic: 'mind_burst', magnetic: 'magnet_pulse', solar: 'nova_ray', lunar: 'shadow_step', weather: 'thunder_field', ember: 'cinder_wave', aerial: 'flight_burst', arcane: 'nova_ray', cosmic: 'starburst', electric: 'lightning_strike'
 };
 
-for (const [id, displayName, archetype, maxEnergy, variants] of BASE_HEROES) {
+for (const [id, displayName, archetype, maxEnergy, variants, abilityNames] of BASE_HEROES) {
+  const names = abilityNames || defaultAbilityNames;
   const costumeIds = variants.map((variant) => `${id}.${variant}`);
-  const abilityIds = abilityNames.map((name) => `${id}.${name}`);
+  const abilityIds = names.map((name) => `${id}.${name}`);
   HEROES[id] = { id, displayName, archetype, maxEnergy, costumeIds, abilityIds };
   variants.forEach((variant, index) => {
     const costumeId = `${id}.${variant}`;
-    COSTUMES[costumeId] = {
-      id: costumeId,
-      heroId: id,
-      displayName: `${displayName} ${variant.replaceAll('_', ' ')}`,
-      tag: `msu_costume_${id}_${variant}`,
-      passive: { energyRegen: 1 + index * 0.15, damage: index + 1 },
-      assetStatus: 'registry-only',
-      modelAsset: null,
-      textureAsset: null
-    };
+    COSTUMES[costumeId] = { id: costumeId, heroId: id, displayName: `${displayName} ${variant.replaceAll('_', ' ')}`, tag: `msu_costume_${id}_${variant}`, passive: { energyRegen: 1 + index * 0.15, damage: index + 1 }, assetStatus: 'registry-only', modelAsset: null, textureAsset: null };
   });
-  abilityNames.forEach((name, index) => {
+  names.forEach((name, index) => {
     const abilityId = `${id}.${name}`;
-    ABILITIES[abilityId] = {
-      id: abilityId,
-      heroId: id,
-      displayName: `${displayName} ${name.replaceAll('_', ' ')}`,
-      energyCost: 15 + index * 10,
-      cooldown: 4 + index * 3,
-      handler: handlerByArchetype[archetype] || 'repulsor_burst',
-      particle: 'msu:energy_burst',
-      sound: 'random.orb',
-      animation: index === 0 ? 'animation.msu.hero_power' : index === 1 ? 'animation.msu.hero_special' : 'animation.msu.hero_ultimate'
-    };
+    ABILITIES[abilityId] = { id: abilityId, heroId: id, displayName: `${displayName} ${name.replaceAll('_', ' ')}`, energyCost: 15 + index * 10, cooldown: 4 + index * 3, handler: handlerByArchetype[archetype] || 'repulsor_burst', particle: 'msu:energy_burst', sound: 'random.orb', animation: index === 0 ? 'animation.msu.hero_power' : index === 1 ? 'animation.msu.hero_special' : 'animation.msu.hero_ultimate' };
   });
 }
 
@@ -97,13 +97,9 @@ export function registerRegistryValidation() {
   for (const [id, hero] of Object.entries(HEROES)) {
     if (seen.has(id) || hero.id !== id) throw new Error(`Duplicate or invalid hero ID: ${id}`);
     seen.add(id);
-    if (hero.costumeIds.length < 3 || hero.abilityIds.length < 2) throw new Error(`Incomplete hero: ${id}`);
-    for (const costumeId of hero.costumeIds) {
-      if (!COSTUMES[costumeId] || COSTUMES[costumeId].heroId !== id) throw new Error(`Invalid costume reference: ${costumeId}`);
-    }
-    for (const abilityId of hero.abilityIds) {
-      if (!ABILITIES[abilityId] || ABILITIES[abilityId].heroId !== id) throw new Error(`Invalid ability reference: ${abilityId}`);
-    }
+    if (hero.costumeIds.length < 3 || hero.abilityIds.length < 3) throw new Error(`Incomplete hero: ${id}`);
+    for (const costumeId of hero.costumeIds) if (!COSTUMES[costumeId] || COSTUMES[costumeId].heroId !== id) throw new Error(`Invalid costume reference: ${costumeId}`);
+    for (const abilityId of hero.abilityIds) if (!ABILITIES[abilityId] || ABILITIES[abilityId].heroId !== id) throw new Error(`Invalid ability reference: ${abilityId}`);
   }
   for (const collection of [COSTUMES, ABILITIES]) {
     const ids = Object.keys(collection);

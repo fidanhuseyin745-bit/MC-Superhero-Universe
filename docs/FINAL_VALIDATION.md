@@ -1,6 +1,6 @@
 # Final validation
 
-Static validation requirements:
+Run from the repository root:
 
 ```bash
 node tools/validate_registry.js
@@ -8,8 +8,14 @@ node tools/validate_assets.js
 node tools/validate_bedrock_assets.js
 ```
 
-Expected policy state: 0 approved external binary assets. No unverified PNG, WAV, OGG, model, animation, or texture is distributed.
+Expected registry totals after this expansion:
 
-The current repository has one shared original geometry file, registry-only costume records, shared animation scaffolding, one animation controller, one render controller, and one particle file. These are separate from registry counts.
+```text
+Heroes: 61
+Costumes: 183
+Abilities: 183
+```
 
-**OYUN İÇİ TEST YAPILMADI.** Minecraft Bedrock and Creator Tools are not available in the automation environment.
+The repository has no approved external binary assets and no bundled PNG, WAV, or OGG files. Costume registry records with `registry-only` status are not binary assets.
+
+**OYUN İÇİ TEST YAPILMADI.** Bedrock and Creator Tools are not available in this execution environment.
