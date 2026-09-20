@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "policy": "Only original, public-domain, CC0, or individually verified redistributable assets may be bundled.",
+  "assets": [],
+  "notes": [
+    "No third-party binary model, texture, animation, or sound asset is bundled until its exact license and redistribution permission are verified.",
+    "The names and abilities in the registry are original archetypes and must not be replaced with copyrighted character designs.",
+    "Vanilla Minecraft sounds used by runtime commands are not redistributed by this repository."
+  ]
+}
