@@ -1,24 +1,7 @@
-# Bedrock implementation status
+# Final build status
 
-## Implemented
+The registry now defines 50 data-driven original hero archetypes, 150 registry costume variants, and 150 registry abilities. Registry records intentionally mark costumes as `registry-only` with null model/texture assets when no verified binary asset exists; this prevents fake asset references.
 
-- Behavior Pack and Resource Pack manifests targeting Bedrock 1.21.x.
-- Data-driven hero, costume, and ability registry.
-- Persistent hero/costume/energy/progression state.
-- Ability cooldown and energy validation.
-- Runtime combat effects using stable vanilla commands and Script API calls.
-- Original JSON geometry/animation/controller foundation.
-- License manifest and validation policy.
+The repository still contains one original shared Bedrock geometry scaffold and no binary textures or audio. Registry counts must not be confused with real model/texture asset counts.
 
-## Deliberately not bundled
-
-No downloaded superhero model, texture, sound, or animation is included without an exact asset-level license verification. “Free”, “open”, or search-result labels are not enough to establish redistribution rights. This prevents accidental inclusion of Marvel/DC likenesses, fan rips, or assets with unclear terms.
-
-## Required local validation
-
-```text
-node tools/validate_registry.js
-node tools/validate_assets.js
-```
-
-A Minecraft Bedrock client/world is required for runtime smoke testing. This repository environment cannot launch Bedrock, so runtime behavior must be verified in a development world.
+Runtime and Bedrock validation must be run from the repository root. Minecraft runtime testing is not performed in this repository automation environment.
