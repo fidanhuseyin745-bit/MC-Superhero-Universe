@@ -1,0 +1,15 @@
+# Build artifacts
+dist/
+*.mcaddon
+*.mcpack
+
+# Local scratch (tools write throwaway data here)
+build/
+.agent_tmp/
+*.log
+
+# Node / editor
+node_modules/
+.npm/
+.vscode/
+.DS_Store

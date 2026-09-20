@@ -1,0 +1,19 @@
+{
+  "name": "mc-superhero-universe",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Modular Minecraft Bedrock superhero framework with a registry-driven engine core.",
+  "license": "MIT",
+  "type": "commonjs",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "node tools/build.mjs",
+    "validate": "node tools/validate.mjs",
+    "test": "node tools/test/run.mjs",
+    "smoke": "node tools/test/smoke.mjs",
+    "check": "npm run validate && npm run test && npm run build",
+    "setup:termux": "bash tools/termux-setup.sh"
+  }
+}

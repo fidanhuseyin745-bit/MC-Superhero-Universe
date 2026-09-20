@@ -1,0 +1,16 @@
+{
+  "behavior_pack": {
+    "path": "behavior_pack",
+    "name": "MSU Behavior",
+    "description": "MSU engine core, hero framework and starter heroes.",
+    "type": "data",
+    "uuid": "c9a2a4f1-ab71-4c22-8a92-7f2e2a5d6a20"
+  },
+  "resource_pack": {
+    "path": "resource_pack",
+    "name": "MSU Resources",
+    "description": "MSU placeholder models, textures, particles and UI.",
+    "type": "resources",
+    "uuid": "e4c7d981-55b3-4a6f-9d1b-2c3e0f7b8d21"
+  }
+}

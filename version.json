@@ -1,0 +1,13 @@
+{
+  "name": "MC Superhero Universe",
+  "namespace": "msu",
+  "version": [0, 1, 0],
+  "target_engine": {
+    "min": [1, 21, 90],
+    "hook": [1, 21, 100]
+  },
+  "script_modules": {
+    "@minecraft/server": "2.0.0",
+    "@minecraft/server-ui": "2.0.0"
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "format_version": 2,
+  "header": {
+    "name": "pack.name",
+    "description": "pack.description",
+    "uuid": "c9a2a4f1-ab71-4c22-8a92-7f2e2a5d6a20",
+    "version": [0, 1, 0],
+    "min_engine_version": [1, 21, 90]
+  },
+  "modules": [
+    {
+      "type": "data",
+      "uuid": "b6f1c0d7-2e64-4a19-9c8b-51d3a7e4b902",
+      "version": [0, 1, 0]
+    },
+    {
+      "type": "script",
+      "language": "javascript",
+      "entry": "scripts/main.js",
+      "uuid": "a03f5c88-4b17-4d2e-8f60-9c2b1e7d4a55",
+      "version": [0, 1, 0]
+    }
+  ],
+  "dependencies": [
+    {
+      "uuid": "e4c7d981-55b3-4a6f-9d1b-2c3e0f7b8d21",
+      "version": [0, 1, 0]
+    },
+    {
+      "module_name": "@minecraft/server",
+      "version": "2.0.0"
+    },
+    {
+      "module_name": "@minecraft/server-ui",
+      "version": "2.0.0"
+    }
+  ],
+  "metadata": {
+    "authors": ["MC Superhero Universe contributors"],
+    "license": "MIT",
+    "product_type": "addon"
+  }
+}

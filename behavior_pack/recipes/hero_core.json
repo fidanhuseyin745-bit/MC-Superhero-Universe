@@ -1,0 +1,23 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "msu:hero_core"
+    },
+    "tags": ["crafting_table"],
+    "pattern": [
+      "DND",
+      "NEN",
+      "DND"
+    ],
+    "key": {
+      "D": { "item": "minecraft:diamond" },
+      "N": { "item": "minecraft:netherite_scrap" },
+      "E": { "item": "minecraft:ender_pearl" }
+    },
+    "result": {
+      "item": "msu:hero_core",
+      "count": 1
+    }
+  }
+}
