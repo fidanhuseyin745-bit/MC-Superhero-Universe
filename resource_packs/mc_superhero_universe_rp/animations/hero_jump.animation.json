@@ -1,0 +1,15 @@
+{
+  "format_version": "1.10.0",
+  "animations": {
+    "animation.msu.hero_run": {
+      "loop": true,
+      "animation_length": 0.8,
+      "bones": {
+        "arm_left": { "rotation": [20, 0, -20] },
+        "arm_right": { "rotation": [-20, 0, 20] },
+        "leg_left": { "rotation": [-20, 0, 0] },
+        "leg_right": { "rotation": [20, 0, 0] }
+      }
+    }
+  }
+}

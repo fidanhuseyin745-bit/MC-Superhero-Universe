@@ -1,0 +1,14 @@
+{
+  "format_version": "1.10.0",
+  "animations": {
+    "animation.msu.hero_fall": {
+      "loop": true,
+      "animation_length": 0.6,
+      "bones": {
+        "root": { "rotation": [30, 0, 0] },
+        "arm_left": { "rotation": [25, 0, -10] },
+        "arm_right": { "rotation": [25, 0, 10] }
+      }
+    }
+  }
+}

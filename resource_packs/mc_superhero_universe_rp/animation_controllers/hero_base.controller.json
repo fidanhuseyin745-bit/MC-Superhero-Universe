@@ -1,0 +1,15 @@
+{
+  "format_version": "1.10.0",
+  "animations": {
+    "animation.msu.hero_victory": {
+      "loop": false,
+      "animation_length": 1.2,
+      "bones": {
+        "head": { "rotation": [0, 0, 0] },
+        "arm_left": { "rotation": [0, 0, -20] },
+        "arm_right": { "rotation": [0, 0, 20] },
+        "cape": { "rotation": [0, 40, 0] }
+      }
+    }
+  }
+}

@@ -1,8 +1,9 @@
-item.msu.hero_focus=Hero Focus
-item.msu.hero_focus=Kahraman Odağı
-
-msu.hero.skyforge=Skyforge
-msu.hero.emberwarden=Emberwarden
-msu.costume.skyforge.standard=Skyforge Standart
-msu.costume.skyforge.overcharge=Skyforge Overcharge
-msu.costume.emberwarden.field=Emberwarden Field
+{
+  "sound_definitions": {
+    "msu.ability.repulsor_burst": { "category": "player", "sounds": ["random.orb"] },
+    "msu.ability.lightning_strike": { "category": "player", "sounds": ["random.explode"] },
+    "msu.ability.nova_ray": { "category": "player", "sounds": ["random.levelup"] },
+    "msu.ability.web_snap": { "category": "player", "sounds": ["random.orb"] },
+    "msu.ability.guard_slam": { "category": "player", "sounds": ["random.anvil_land"] }
+  }
+}

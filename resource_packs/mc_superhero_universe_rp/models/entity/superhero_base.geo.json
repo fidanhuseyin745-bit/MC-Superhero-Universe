@@ -1,0 +1,17 @@
+{
+  "format_version": "1.10.0",
+  "render_controllers": {
+    "controller.render.msu.hero_base": {
+      "geometry": "Geometry.default",
+      "materials": [
+        { "*": "Material.default" }
+      ],
+      "textures": [
+        "Texture.default"
+      ],
+      "part_visibility": [
+        { "*": true }
+      ]
+    }
+  }
+}

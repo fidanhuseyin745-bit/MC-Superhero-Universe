@@ -2,29 +2,26 @@
   "format_version": 2,
   "header": {
     "name": "MC Superhero Universe - Behavior Pack",
-    "description": "Original scalable superhero gameplay systems",
+    "description": "Original superhero gameplay systems for Bedrock",
     "uuid": "8f20a04c-ecdd-4c9a-9b3e-58f6a62b13d1",
-    "version": [0, 1, 0],
+    "version": [0, 2, 0],
     "min_engine_version": [1, 21, 0]
   },
   "modules": [
     {
       "type": "data",
       "uuid": "5a1c9e54-4d4d-43a2-a495-3a01b6c08f31",
-      "version": [0, 1, 0]
+      "version": [0, 2, 0]
     },
     {
       "type": "script",
       "language": "javascript",
       "entry": "scripts/main.js",
       "uuid": "e0caa1c5-44d3-42f8-bb22-8b8c4b50e1b8",
-      "version": [0, 1, 0]
+      "version": [0, 2, 0]
     }
   ],
   "dependencies": [
-    {
-      "module_name": "@minecraft/server",
-      "version": "1.15.0"
-    }
+    { "module_name": "@minecraft/server", "version": "1.15.0" }
   ]
 }

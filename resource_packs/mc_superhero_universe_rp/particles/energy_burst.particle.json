@@ -1,17 +1,45 @@
 {
-  "format_version": "1.21.0",
-  "particle_effect": {
-    "description": {
-      "identifier": "msu:energy_burst",
-      "basic_render_parameters": { "material": "particles_alpha", "texture": "textures/particle/particles" }
-    },
-    "components": {
-      "minecraft:emitter_rate_instant": { "num_particles": 8 },
-      "minecraft:emitter_lifetime_once": { "active_time": 0.2 },
-      "minecraft:particle_lifetime_expression": { "max_lifetime": 0.5 },
-      "minecraft:particle_initial_speed": 0.5,
-      "minecraft:particle_motion_dynamic": { "linear_acceleration": [0, 0.05, 0] },
-      "minecraft:particle_appearance_billboard": { "size": [0.15, 0.15], "facing_camera_mode": "lookat_xyz" }
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.msu.hero_base": {
+      "initial_state": "idle",
+      "states": {
+        "idle": {
+          "animations": ["idle"],
+          "transitions": [
+            { "run": "query.is_moving" },
+            { "jump": "query.is_jumping" },
+            { "fall": "query.is_falling" },
+            { "power": "query.is_using_item" }
+          ]
+        },
+        "run": {
+          "animations": ["run"],
+          "transitions": [
+            { "idle": "!query.is_moving" },
+            { "jump": "query.is_jumping" }
+          ]
+        },
+        "jump": {
+          "animations": ["jump"],
+          "transitions": [
+            { "fall": "query.is_falling" },
+            { "idle": "!query.is_jumping && !query.is_falling" }
+          ]
+        },
+        "fall": {
+          "animations": ["fall"],
+          "transitions": [
+            { "idle": "!query.is_falling" }
+          ]
+        },
+        "power": {
+          "animations": ["power"],
+          "transitions": [
+            { "idle": "!query.is_using_item" }
+          ]
+        }
+      }
     }
   }
 }

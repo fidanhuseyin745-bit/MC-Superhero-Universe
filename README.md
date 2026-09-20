@@ -1,18 +1,38 @@
 # MC Superhero Universe
 
-Minecraft Bedrock Edition için özgün, veri odaklı ve ölçeklenebilir süper kahraman addon altyapısı.
+Minecraft Bedrock Edition için özgün, ölçeklenebilir ve modüler süper kahraman addon altyapısı.
 
-## İçerik
+## Özellikler
 
-- `behavior_packs/mc_superhero_universe_bp`: oyun mantığı, script ve veri kayıtları
-- `resource_packs/mc_superhero_universe_rp`: metinler, animasyon/particle/ses altyapısı
-- `docs/`: mimari, uyumluluk ve içerik ekleme rehberi
+- BP/RP ayrımı korunur
+- Kahraman, kostüm, yetenek, enerji, combat, progression, animation ve particle altyapısı ayrı modüllerdedir
+- Her kahraman için çoklu kostüm desteği
+- Yeni kahraman ekleme için merkezi registry yapısı
+- Özgün kahraman ve kostüm tasarımları için uyumlu Bedrock data modeli
 
-## Hızlı başlangıç
+## Dahil edilen örnek kahramanlar
 
-1. `behavior_packs/mc_superhero_universe_bp` ve `resource_packs/mc_superhero_universe_rp` klasörlerini Bedrock dünyasının `development_behavior_packs` ve `development_resource_packs` klasörlerine kopyalayın.
-2. Dünyada iki development pack'i etkinleştirin.
-3. `!hero list`, `!hero select skyforge` ve `!costume list` komutlarını kullanın.
-4. Yetenek kullanmak için elinizde `blaze_rod` varken sağ tıklayın. Hotbar slotu 0 birinci yeteneği, slot 1 ikinci yeteneği seçer.
+- Iron Guard
+- Web Slinger
+- Green Giant
+- Storm Caller
+- Flash Runner
+- Sky Warden
+- Night Warden
+- Shield Bearer
+- Nova Sentinel
 
-Bu ilk temel sürümde görsel kostüm modelleri yerine güvenli runtime tag/state altyapısı bulunur. Gerçek model, texture ve attachable dosyaları sonraki içerik iterasyonlarında eklenebilir.
+## Kurulum
+
+1. `behavior_packs/mc_superhero_universe_bp` klasörünü `development_behavior_packs` içine taşıyın.
+2. `resource_packs/mc_superhero_universe_rp` klasörünü `development_resource_packs` içine taşıyın.
+3. Bedrock'ta add-on'ı etkinleştirin.
+4. `!hero list` komutuyla kahramanlara erişin.
+5. `!costume list` ve `!hero select <id>` ile runtime seçimi yapın.
+6. `minecraft:blaze_rod` kullanarak yetenekleri tetikleyin.
+
+## Notlar
+
+- Bu depo, gerçek Bedrock dünyasında çalıştırılabilecek temel davranış ve veri yapısını sağlar.
+- Binary texture/model dosyaları doğrudan GitHub dosya API'si ile üretilemeyeceği için, burada JSON tabanlı geometry/animation/render controller ve veri tanımları kullanılmıştır.
+- Gerçek üretim görselleri için süper kahraman özel texture/3D model setleri dışarıdan eklenebilir veya yerel 3D araçlarıyla üretilebilir.

@@ -1,0 +1,14 @@
+{
+  "format_version": "1.10.0",
+  "animations": {
+    "animation.msu.hero_jump": {
+      "loop": false,
+      "animation_length": 0.6,
+      "bones": {
+        "root": { "rotation": [-10, 0, 0] },
+        "arm_left": { "rotation": [-15, 0, -25] },
+        "arm_right": { "rotation": [-15, 0, 25] }
+      }
+    }
+  }
+}

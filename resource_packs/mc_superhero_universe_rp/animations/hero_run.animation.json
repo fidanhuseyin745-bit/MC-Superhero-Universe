@@ -1,0 +1,15 @@
+{
+  "format_version": "1.10.0",
+  "animations": {
+    "animation.msu.hero_idle": {
+      "loop": true,
+      "animation_length": 1.0,
+      "bones": {
+        "head": { "rotation": [0, 0, 0] },
+        "arm_left": { "rotation": [0, 0, -8] },
+        "arm_right": { "rotation": [0, 0, 8] },
+        "cape": { "rotation": [0, 0, 0] }
+      }
+    }
+  }
+}
