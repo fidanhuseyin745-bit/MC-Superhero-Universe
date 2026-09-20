@@ -1,16 +1,17 @@
-# Compatibility and testing
+# Bedrock compatibility status
 
-Hedef: Minecraft Bedrock 1.21.x ve `@minecraft/server` 1.15.0.
+The packs target Minecraft Bedrock 1.21.x with `@minecraft/server` 1.15.0. All 61 registry heroes share a bounded, data-driven runtime and the same low-cost Bedrock geometry/controller scaffold; no unverified binary assets are bundled.
 
-Pack manifest'lerinde `min_engine_version` `[1, 21, 0]` olarak sabitlenmiştir. Preview-only API kullanılmamalıdır.
+The registry contains 61 heroes, three registry costumes per hero, and three registry abilities per hero. Costume entries without verified binary art remain explicitly `registry-only` with null model/texture references. This is not counted as completed costume artwork.
 
-## Manual smoke test
+Runtime safeguards include a 12-entity area-target cap, one particle burst per activation, no per-target lightning entity spawning, and energy sampling every 40 ticks. These are static design properties; mobile-device performance still requires profiling in a real Bedrock world.
 
-- İki pack'in etkinleştiğini ve içerik hatası üretmediğini doğrulayın.
-- `!hero list`, `!hero select skyforge`, `!costume list`, `!costume equip skyforge.overcharge` çalıştırın.
-- Blaze rod ile slot 0/1 yeteneklerini kullanın.
-- Enerji azaldığında yeteneğin reddedildiğini, zamanla yenilendiğini gözlemleyin.
-- Oyuncudan çıkıp tekrar girerek hero/costume/energy state'ini doğrulayın.
-- Bir hedefe başarılı vuruş yapıldığında progression seviyesinin arttığını doğrulayın.
+Validation commands:
 
-Bu repository ortamında Minecraft istemcisi çalıştırılamadığı için oyun içi smoke test sonucu iddia edilmemektedir.
+```bash
+node tools/validate_registry.js
+node tools/validate_assets.js
+node tools/validate_bedrock_assets.js
+```
+
+**OYUN İÇİ TEST YAPILMADI.**
